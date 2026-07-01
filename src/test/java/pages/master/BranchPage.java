@@ -197,6 +197,146 @@ public class BranchPage {
 			page.locator(BranchPageLocators.Registrationdetail1).isVisible();
 			
 		}
+		
+		@Given("user is on registeration detail 1 page")
+		public void RegistrationDetail1()
+		{
+			page.locator("xpath=//p[text()='Registration Details 1']").isVisible();;
+		}
+		
+		@When("user click on shop Act no checkbox and enters shop act no and date and clicks on choose file")
+		public void DetailsRegisteration()
+		{
+			page.locator("xpath=//input[@name='cbShopActNo']").check();
+			page.locator("#Doc_0__DocNumber").fill("SA/2026/458721");
+			page.locator("#Doc_0__DocDate").fill("02/10/2003");
+			page.locator("#fuShopActNo").setInputFiles(Paths.get("D:\\prachi\\Analysis\\logo\\branchpage.jpg"));
+		}
+		
+		@And("user click on Shop Act Copy No checkbox and enters Shop Act Copy No and date and clicks on choose file")
+		public void DetailsRegisteration2()
+		{
+			page.locator("#cbShopActCopyNo").check();
+			page.locator("#Doc_1__DocNumber").fill("SAC/MH/2026/458721");
+			page.locator("#Doc_1__DocDate").fill("02/10/2003");
+			page.locator("#fuShopActCopyNo").setInputFiles(Paths.get("D:\\prachi\\Analysis\\logo\\branchpage.jpg"));
+			
+		}
+		
+		@And("user click on ESIC Code No checkbox and enters ESIC Code No and date and clicks on choose file")
+		public void DetailsRegisteration3()
+		{
+			page.locator("#cbESICNo").check();
+			page.locator("#Doc_2__DocNumber").fill("12345678901234567");
+			page.locator("#Doc_2__DocDate").fill("02/10/2003");
+			page.locator("#fuESICNo").setInputFiles(Paths.get("D:\\prachi\\Analysis\\logo\\branchpage.jpg"));
+			
+		}
+		
+		@And("user click on PF Code No checkbox and enters PF Code No and date and clicks on choose file")
+		public void DetailsRegisteration5()
+		{
+			page.locator("#cbPFNo").check();
+			page.locator("#Doc_3__DocNumber").fill("MHBAN1234567000");
+			page.locator("#Doc_3__DocDate").fill("02/10/2003");
+			page.locator("#fuPFNo").setInputFiles(Paths.get("D:\\prachi\\Analysis\\logo\\branchpage.jpg"));
+			
+		}
+		@And("user click on PT Code No checkbox and enters PT Code No and date and clicks on choose file")
+		public void DetailsRegisteration6()
+		{
+			page.locator("#cbPTNo").check();
+			page.locator("#Doc_4__DocNumber").fill("27ABCDE1234FPT001");
+			page.locator("#Doc_4__DocDate").fill("02/10/2003");
+			page.locator("#fuPTNo").setInputFiles(Paths.get("D:\\prachi\\Analysis\\logo\\branchpage.jpg"));
+			
+		}
+		@And("user click on Welfare Fund No checkbox and enters Welfare Fund No and date and clicks on choose file")
+		public void DetailsRegisteration7()
+		{
+			page.locator("#cbWelfareFundNo").check();
+			page.locator("#Doc_5__DocNumber").fill("WF2026458721");
+			page.locator("#Doc_5__DocDate").fill("02/10/2003");
+			page.locator("#fuWelfareFundNo").setInputFiles(Paths.get("D:\\prachi\\Analysis\\logo\\branchpage.jpg"));
+			
+		}
+		@And("user click on Service Tax No checkbox and enters Service Tax No and date and clicks on choose file")
+		public void DetailsRegisteration8()
+		{
+			page.locator("#cbServiceTaxNo").check();
+			page.locator("#Doc_6__DocNumber").fill("ABCDE1234FST001");
+			page.locator("#Doc_6__DocDate").fill("02/10/2003");
+			page.locator("#fuServiceTaxNo").setInputFiles(Paths.get("D:\\prachi\\Analysis\\logo\\branchpage.jpg"));
+			
+		}
+		@And("user click on TIN No checkbox and enters TIN No and date and clicks on choose file")
+		public void DetailsRegisteration9()
+		{
+			page.locator("#cbTinNo").check();
+			page.locator("#Doc_7__DocNumber").fill("27123456789");
+			page.locator("#Doc_7__DocDate").fill("02/10/2003");
+			page.locator("#fucbTinNo").setInputFiles(Paths.get("D:\\prachi\\Analysis\\logo\\branchpage.jpg"));
+			
+		}
+		@And("user click on PAN Card No checkbox and enters PAN Card No and date and clicks on choose file")
+		public void DetailsRegisteration10()
+		{
+			page.locator("#cbPanNo").check();
+			page.locator("#Doc_8__DocNumber").fill("ABCDE1234F");
+			page.locator("#Doc_8__DocDate").fill("02/10/2003");
+			page.locator("#fuPanNoDate").setInputFiles(Paths.get("D:\\prachi\\Analysis\\logo\\branchpage.jpg"));
+			
+		}
+		@And("user click on LIN No checkbox and enters LIN No and date and clicks on choose file")
+		public void DetailsRegisteration4()
+		{
+			page.locator("#cbLINNo").check();
+			page.locator("#Doc_9__DocNumber").fill("1000001234567");
+			page.locator("#Doc_9__DocDate").fill("02/10/2003");
+			page.locator("#fucbLINNo").setInputFiles(Paths.get("D:\\prachi\\Analysis\\logo\\branchpage.jpg"));
+			
+		}
+		
+		@And("click on next button for regesiteration detail 2 page")
+		public void ClickNext1()
+		{
+			page.locator(BranchPageLocators.Next).nth(4).click();
+		}
+		
+		@Then("succesfully registeration detail2 page should display")
+		public void VerifyNextPage2()
+		{
+			page.locator("xpath=//p[text()='Registration Details 2']").isVisible();
+		}
+		
+		//registration2
+		
+		@Given("user is on Registration detail2 page")
+		public void Registrationpage23()
+		{
+			page.locator("xpath=//p[text()='Registration Details 2']").isVisible();
+		}
+		
+		@When("user enters document no,date of registration,upload a document")
+		public void Registrationdetail2()
+		{
+			PlaywrightAssertions.assertThat(page.locator("xpath=//input[@placeholder='Document Name']")).not().isEmpty();
+			page.locator("xpath=//input[@placeholder='Document No.']").fill("1");
+			page.locator("xpath=//input[@name='ko_uniqued_0']").fill("24/06/2026");
+			page.locator("xpath=//input[@name='ko_uniques_0']").setInputFiles(Paths.get("D:\\prachi\\Analysis\\logo\\branchpage.jpg"));
+		}
+		
+		@And("click on the next button")
+		public void ClickNext3()
+		{
+				page.locator(BranchPageLocators.Next).nth(5).click();
+		}
+			
+		@Then("successfully login detail page should displayed")
+		public void VerifyLoginDetail()
+		{
+			page.locator("xpath=//p[text()='Login Details ']").isVisible();
+		}
 		@Given("user is on the LoginDetailPage")
 		public void LogindetailPage()
 		

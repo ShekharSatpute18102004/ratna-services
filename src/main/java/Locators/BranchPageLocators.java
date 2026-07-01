@@ -62,6 +62,7 @@ public class BranchPageLocators {
 	//registration detail1
 	public static final String Registrationdetail1="//p[text()='Registration Details 1']"; 
 	
+	
 	//authority
 	
 	public static final String LoginDetail ="//p[text()='Login Details ']";
